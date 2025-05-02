@@ -7,6 +7,8 @@ import compression from 'compression';
 import { connectDB } from './config/database.js';
 import routes from './routes/index.js';
 import errorHandler from './middleware/errorHandler.js';
+import path from "path";
+
 
 // Load environment variables
 dotenv.config({ path: './.env' });
@@ -15,6 +17,7 @@ dotenv.config({ path: './.env' });
 // Initialize express app
 const app = express();
 const PORT = process.env.PORT || 5000;
+const _dirname = path.resolve();
 
 // Connect to MongoDB
 connectDB();
@@ -29,6 +32,10 @@ app.use(express.urlencoded({ extended: true }));
 
 // Routes
 app.use('/api', routes);
+app.use(express.static(path.join(_dirname,"/frontend/dist")))
+app.get('*',(req,res) =>{
+  res.sendFile(path.resolve(_dirname,"frontend","dist","index.html")); 
+})
 
 // Error handling middleware
 app.use(errorHandler);
