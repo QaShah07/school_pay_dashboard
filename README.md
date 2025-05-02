@@ -182,12 +182,5 @@ PAYMENT_API_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
 SCHOOL_ID=65b0e6293e9f76a9694d84b4
 ```
 
-## 🧪 Postman Collection
-
-Download the Postman collection [here](https://www.google.com/search?q=link-to-postman-collection).
-
 ## 📌 This project is hosted live at:
-
-Backend: https://your-backend-url.com
-
-Frontend: https://your-frontend-url.netlify.app
+Live Link: https://school-pay-dashboard.onrender.com
